@@ -1,6 +1,20 @@
-import { Person } from "./person";
+import { Counter } from "./counter";
 
-const alice = new Person("Alice", 20, "secret123", 2006);
-console.log("class:", alice.introduce());
+const testCounter = new Counter(10);
+const testtestCounter = new Counter(10);
 
-alice.changePassword("newSecret456");
+console.log(testCounter.getValue()); // 10
+console.log(testtestCounter.getValue()); // 10
+
+testCounter.increment();
+
+console.log(testCounter.getValue()); // 11
+console.log(testtestCounter.getValue()); // 10
+
+testCounter.decrement();
+
+console.log(testCounter.getValue()); // 10
+
+testCounter.reset();
+
+console.log(testCounter.getValue()); // 0
